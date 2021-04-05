@@ -64,9 +64,9 @@ api.listen(9090, async () => {
 
     // Start work on our Expo project.
     const expoArguments = core.getInput('expo_arguments');
-    console.log(chalk.blueBright(`===> Running: expo build:ios ${expoArguments}`));
+    console.log(chalk.blueBright(`===> Running: expo build:ios -t archive ${expoArguments}`));
 
-    expoCli = cp.spawn('script', ['-r', '-q', '/dev/null', `expo build:ios ${expoArguments}`], {
+    expoCli = cp.spawn('script', ['-r', '-q', '/dev/null', `expo build:ios -t archive ${expoArguments}`], {
         env: {
             ...process.env,
             EXPO_APPLE_ID: core.getInput('expo_apple_id'),
