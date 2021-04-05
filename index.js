@@ -66,7 +66,7 @@ api.listen(9090, async () => {
     const expoArguments = core.getInput('expo_arguments');
     console.log(chalk.blueBright(`===> Running: expo build:ios ${expoArguments}`));
 
-    expoCli = cp.spawn('script', ['-r', '-q', '/dev/null', `expo upload:ios ${expoArguments}`], {
+    expoCli = cp.spawn('script', ['-r', '-q', '/dev/null', `expo build:ios ${expoArguments}`], {
         env: {
             ...process.env,
             EXPO_APPLE_ID: core.getInput('expo_apple_id'),
